@@ -1,0 +1,69 @@
+# Many thanks to:
+# https://github.com/myfreeweb/dotfiles
+
+DOT="${HOME}/dotfiles"
+
+### plugins ####################################################################
+
+source "${DOT}/zsh/zgen/zgen.zsh"
+if ! zgen saved; then
+    echo ">> Generating zgen configuration"
+    # prezto options
+    zgen prezto editor key-bindings 'emacs'
+    zgen prezto editor dot-expansion 'yes'
+    zgen prezto '*' color 'yes'
+    zgen prezto '*' case-sensitive 'yes'
+    zgen prezto prompt theme 'sorin'
+
+    # prezto and modules
+    zgen prezto
+    zgen prezto environment
+    zgen prezto terminal
+    zgen prezto editor
+    zgen prezto git
+    zgen prezto history
+    zgen prezto directory
+    zgen prezto spectrum
+    zgen prezto utility
+    zgen prezto completion
+
+    zgen prezto syntax-highlighting
+    zgen prezto prompt
+
+    # plugins
+    zgen save
+    echo ">> Done"
+fi
+
+### color scheme ###############################################################
+
+base16_scheme() {
+	local SCHEME="${DOT}/zsh/base16-shell/base16-$*.sh"
+    if [ -e $SCHEME ]; then
+	    source  $SCHEME
+    else
+        echo "$ERROR Can't find color scheme '$SCHEME'"
+    fi
+}
+
+day() { base16_scheme "atelierdune.light" }
+night() { base16_scheme "atelierdune.dark" }
+
+night
+
+################################################################################
+
+[[ -e $commands[vim]  ]] && export EDITOR=vim  VISUAL=vim
+[[ -e $commands[nvim] ]] && export EDITOR=nvim VISUAL=nvim
+alias vi=$VISUAL
+
+export LESS='-g -i -q -R -S -w -z-4'
+export TERM=xterm-256color
+export DEFAULT_USER="akowal"
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+unsetopt correct
+
+### aliases ####################################################################
+
+alias gita="alias | grep \"git\" | grep"

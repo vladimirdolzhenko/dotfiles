@@ -1,0 +1,17 @@
+if [[ -z "$LANG" ]]; then
+    export LANG='en_US.UTF-8'
+fi
+
+typeset -gU cdpath fpath mailpath path
+
+path=(
+    /usr/local/{bin,sbin}
+    $path
+)
+
+if [[ ! -d "$TMPDIR" ]]; then
+  export TMPDIR="/tmp/$LOGNAME"
+  mkdir -p -m 700 "$TMPDIR"
+fi
+
+TMPPREFIX="${TMPDIR%/}/zsh"

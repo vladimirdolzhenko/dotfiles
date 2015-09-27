@@ -1,0 +1,61 @@
+filetype off
+
+set rtp+=~/.nvim/bundle/Vundle.vim
+call vundle#rc("~/.nvim/bundle")
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/landscape.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'editorconfig/editorconfig-vim'
+
+call vundle#end()
+filetype plugin indent on
+
+set backspace=indent,eol,start
+
+"set expandtab
+"set shiftwidth=4
+"set softtabstop=4
+"set tabstop=4
+
+set ignorecase
+set smartcase
+set showmatch
+set number
+set relativenumber
+set cursorline
+set nowrap
+
+nmap <leader>l :set list!<CR>
+set listchars=tab:>\ ,space:·,trail:·,nbsp:×,precedes:«,extends:»
+
+set nobackup
+set noswapfile
+
+syntax on
+
+if filereadable('~/.nvim/bundle/landscape.vim/README.md')
+	colorscheme landscape
+endif
+
+augroup reload_vimrc
+		autocmd!
+		autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
+
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'landscape',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \ },
+      \'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
