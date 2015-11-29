@@ -1,23 +1,33 @@
 require brew-cask
 
-APPS=(
-    atom
-    tunnelblick
-    gpgtools
+CASK_APPS=(
+	gpgtools
+    iterm2 
     avast
-    iterm2
-    flux
-    1password
-    omnifocus
-    textual
-    telegram
-    slack
     vlc
     google-chrome
     google-drive
-    dropbox
-    transmission
-    transmit
+    skype
+    adium 
+    sublime-text
+    osxfuse
+    evernote
+    java
+    qbittorrent
+    gimp
+    inkscape
 )
 
-brew cask install $APPS
+APPS=(
+	mc
+	pwgen
+	encfs
+	ntfs-3g
+)
+
+for app in ${CASK_APPS[*]} 
+do
+brew cask install --appdir="/Applications" ${app}
+done
+
+brew install ${APPS[*]}

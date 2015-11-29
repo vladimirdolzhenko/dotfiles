@@ -23,6 +23,7 @@ MODULES=(
     homebrew
     git
     nvim
+    bash
     zsh
     osx-privacy
     osx-defaults

@@ -129,3 +129,12 @@ defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 defaults write org.m0k.transmission WarningDonate -bool false
 ## Hide the legal disclaimer
 defaults write org.m0k.transmission WarningLegal -bool false
+
+
+# https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Set the timezone; see `sudo systemsetup -listtimezones` for other values
+sudo systemsetup -settimezone "Europe/Amsterdam" > /dev/null
