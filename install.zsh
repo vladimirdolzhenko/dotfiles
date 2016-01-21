@@ -23,8 +23,8 @@ MODULES=(
     homebrew
     git
     nvim
-    bash
     zsh
+    bash
     osx-privacy
     osx-defaults
     fonts

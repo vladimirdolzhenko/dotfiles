@@ -14,13 +14,18 @@ CASK_APPS=(
     evernote
     java
     qbittorrent
+    stellarium
     gimp
     inkscape
+    android-file-transfer
+    plex-media-server
+    plex-home-theater
 )
 
 APPS=(
 	mc
-	pwgen
+ 	pwgen
+    p7zip
 	encfs
 	ntfs-3g
 )

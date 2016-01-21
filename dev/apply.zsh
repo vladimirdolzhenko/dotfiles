@@ -1,6 +1,11 @@
 require brew-cask
 
 # java
-brew install gradle
-brew install git
+APPS=(
+	gradle
+	maven
+	git
+	mercurial
+)
+brew install ${APPS[*]}
 brew cask install --appdir="/Applications" intellij-idea-ce
