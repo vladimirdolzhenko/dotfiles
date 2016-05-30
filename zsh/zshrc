@@ -58,15 +58,19 @@ night
 [[ -e $commands[nvim] ]] && export EDITOR=nvim VISUAL=nvim
 alias vi=$VISUAL
 
-eval "$(jenv init -)"
-
 export LESS='-g -i -q -R -S -w -z-4'
 export TERM=xterm-256color
 export DEFAULT_USER="vladimir"
+
+if [[ -d ${HOME}/.jenv ]]; then 
+eval "$(jenv init -)"
 export JAVA_HOME=$(jenv javahome)
+fi
 
 unsetopt correct
 
 ### aliases ####################################################################
 
 alias gita="alias | grep \"git\" | grep"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
