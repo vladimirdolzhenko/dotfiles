@@ -3,21 +3,6 @@
 
 DOT="${HOME}/dotfiles"
 
-# zgen
-if [ ! -d "${DOT}/zsh/zgen" ]; then
-    git clone https://github.com/tarjoilija/zgen.git ${DOT}/zsh/zgen
-fi
-
-# base16-shell
-if [ ! -d "${DOT}/zsh/base16-shell" ]; then
-    git clone https://github.com/chriskempson/base16-shell.git ${DOT}/zsh/base16-shell
-fi
-
-# zsh-autosuggestions
-if [ ! -d "${DOT}/zsh/zsh-autosuggestions" ]; then
-    git clone git://github.com/zsh-users/zsh-autosuggestions ${DOT}/zsh/zsh-autosuggestions
-fi
-
 ### plugins ####################################################################
 
 source "${DOT}/zsh/zgen/zgen.zsh"
