@@ -74,3 +74,10 @@ unsetopt correct
 alias gita="alias | grep \"git\" | grep"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# zsh-autosuggestions
+if [ ! -d "${HOME}/.zsh/zsh-autosuggestions" ]; then
+    git clone git://github.com/zsh-users/zsh-autosuggestions ${HOME}/.zsh/zsh-autosuggestions
+fi
+
+source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
