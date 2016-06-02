@@ -19,7 +19,7 @@ CASK_APPS=(
 	inkscape
 	android-file-transfer
 	plex-media-server
-	plex-home-theater
+	telegram
 )
 
 APPS=(
