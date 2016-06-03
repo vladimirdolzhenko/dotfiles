@@ -1,0 +1,78 @@
+{
+	"always_show_minimap_viewport": true,
+	"auto_complete_commit_on_tab": true,
+	"auto_complete_selector":
+	[
+		"source",
+		"text.html"
+	],
+	"auto_complete_triggers":
+	[
+	],
+	"auto_complete_with_fields": true,
+	"auto_match_enabled": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Material Color Scheme/sublime/material-dark.tmTheme",
+	"create_window_at_startup": false,
+	"detect_indentation": true,
+	"detect_slow_plugins": false,
+	"drag_text": false,
+	"draw_indent_guides": true,
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".sass-cache",
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules",
+		"laravel",
+		"bundles",
+		"_archive",
+		"_assets",
+		"video",
+		"videos",
+		"img",
+		"fonts",
+		"images",
+		".mov",
+		".ogv",
+		".webm",
+		".mp4",
+		".aep",
+		"log",
+		"storage",
+		"dist",
+		"tmp"
+	],
+	"font_face": "Fira Code Light",
+	"font_size": 12,
+	"hot_exit": true,
+	"ignored_packages":
+	[
+		"AdvancedNewFile",
+		"Vintage"
+	],
+	"indent_subsequent_lines": true,
+	"index_files": false,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"match_selection": false,
+	"material_theme_contrast_mode": true,
+	"open_files_in_new_window": false,
+	"overlay_scroll_bars": "system",
+	"preview_on_click": true,
+	"scroll_past_end": true,
+	"scroll_speed": 0,
+	"show_panel_on_build": true,
+	"smart_indent": true,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": false,
+	"trim_automatic_white_space": false,
+	"trim_trailing_white_space_on_save": true,
+	"word_separators": "./\\()\"'-:,.;<>~!#%&^*|+=[]{}`~?",
+	"word_wrap": true
+}
