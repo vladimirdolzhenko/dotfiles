@@ -31,6 +31,8 @@ MODULES=(
     tools
     dev
     apps
+    mc
+    sublime
 )
 
 if [[ -n "$@" ]]; then

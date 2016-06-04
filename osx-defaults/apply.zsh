@@ -115,7 +115,6 @@ defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 
-
 # Mail
 ## Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
@@ -164,3 +163,7 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+# iterm2
+/usr/libexec/PlistBuddy -c 'Set :"New Bookmarks":0:"Non Ascii Font" "FantasqueSansMono-Regular 12"' ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c 'Set :"New Bookmarks":0:"Normal Font" "FantasqueSansMono-Regular 14"' ~/Library/Preferences/com.googlecode.iterm2.plist
