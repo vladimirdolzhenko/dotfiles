@@ -2,13 +2,13 @@ require brew-cask
 
 CASK_APPS=(
 	gpgtools
-	iterm2 
+	iterm2
 	avast
 	vlc
 	google-chrome
 	google-drive
 	skype
-	adium 
+	adium
 	sublime-text
 	osxfuse
 	evernote
@@ -20,6 +20,7 @@ CASK_APPS=(
 	android-file-transfer
 	plex-media-server
 	telegram
+	spotify
 )
 
 APPS=(
@@ -30,9 +31,10 @@ APPS=(
 	encfs
 	ntfs-3g
 	hexedit
+	youtube-dl
 )
 
-for app in ${CASK_APPS[*]} 
+for app in ${CASK_APPS[*]}
 do
 brew cask install --appdir="/Applications" ${app}
 done
