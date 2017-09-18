@@ -8,4 +8,4 @@ APPS=(
 	mercurial
 )
 brew install ${APPS[*]}
-brew cask install --appdir="/Applications" intellij-idea-next-eap
+brew cask install --appdir="/Applications" intellij-idea-ce

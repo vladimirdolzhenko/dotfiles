@@ -6,7 +6,7 @@ CASK_APPS=(
 	avast
 	vlc
 	google-chrome
-	google-drive
+	google-backup-and-sync
 	skype
 	adium
 	sublime-text
@@ -21,6 +21,8 @@ CASK_APPS=(
 	plex-media-server
 	telegram
 	spotify
+	rstudio
+	mactex
 )
 
 APPS=(
@@ -32,6 +34,7 @@ APPS=(
 	ntfs-3g
 	hexedit
 	youtube-dl
+	R
 )
 
 for app in ${CASK_APPS[*]}
