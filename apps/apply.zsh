@@ -7,12 +7,12 @@ CASK_APPS=(
 	vlc
 	google-chrome
 	google-backup-and-sync
+	firefox
 	skype
 	adium
 	sublime-text
 	osxfuse
 	evernote
-	java
 	qbittorrent
 	stellarium
 	gimp
@@ -35,6 +35,12 @@ APPS=(
 	hexedit
 	youtube-dl
 	R
+	mas
+)
+
+MAS_APPS=(
+	497799835
+	715768417
 )
 
 for app in ${CASK_APPS[*]}
@@ -43,3 +49,8 @@ brew cask install --appdir="/Applications" ${app}
 done
 
 brew install ${APPS[*]}
+
+for app in ${MAS_APPS[*]}
+do
+mas install ${app}
+done

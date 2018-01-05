@@ -3,5 +3,6 @@ brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 brew tap homebrew/fuse
 brew tap homebrew/science
+brew tap buo/cask-upgrade
 brew update && brew upgrade && brew cleanup
 brew cask update && brew cask cleanup

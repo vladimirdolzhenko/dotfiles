@@ -1,6 +1,17 @@
 require brew-cask
 
-# java
+CASK_APPS=(
+    java7
+    java8
+    java
+    intellij-idea-ce
+)
+
+for app in ${CASK_APPS[*]}
+do
+brew cask install --appdir="/Applications" ${app}
+done
+
 APPS=(
 	gradle
 	maven
@@ -8,4 +19,3 @@ APPS=(
 	mercurial
 )
 brew install ${APPS[*]}
-brew cask install --appdir="/Applications" intellij-idea-ce
