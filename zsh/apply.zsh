@@ -20,7 +20,8 @@ rm -f ~/.zprofile
 brew list zsh || brew install zsh
 
 # configure
-[[ $SHELL == "/bin/zsh" ]] || chsh -s /bin/zsh
+#[[ $SHELL == "/bin/zsh" ]] || 
+chsh -s /bin/zsh
 
 DIR=$(dirname $0:A)
 

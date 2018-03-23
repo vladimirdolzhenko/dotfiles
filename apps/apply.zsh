@@ -1,15 +1,15 @@
-require brew-cask
+require brew
 
 CASK_APPS=(
 	gpgtools
 	iterm2
-	avast
+	avast-security
 	vlc
 	google-chrome
 	google-backup-and-sync
 	firefox
 	skype
-	adium
+	whatsapp
 	sublime-text
 	osxfuse
 	evernote
@@ -26,6 +26,7 @@ CASK_APPS=(
 )
 
 APPS=(
+	mas
 	mc
 	jenv
  	pwgen
@@ -35,7 +36,6 @@ APPS=(
 	hexedit
 	youtube-dl
 	R
-	mas
 )
 
 MAS_APPS=(
@@ -43,14 +43,18 @@ MAS_APPS=(
 	715768417
 )
 
-for app in ${CASK_APPS[*]}
-do
-brew cask install --appdir="/Applications" ${app}
-done
-
 brew install ${APPS[*]}
 
 for app in ${MAS_APPS[*]}
 do
 mas install ${app}
 done
+
+for app in ${CASK_APPS[*]}
+do
+brew cask install --appdir="/Applications" ${app}
+done
+
+
+
+

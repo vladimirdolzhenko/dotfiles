@@ -1,7 +1,10 @@
 # https://github.com/myfreeweb/dotfiles/blob/master/osx/defaults.sh
 
 ## Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
+
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 ## Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
@@ -13,12 +16,16 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>0</integer><key>KeyboardLayout Name</key><string>U.S.</string></dict>'
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>-23011</integer><key>KeyboardLayout Name</key><string>Russian</string></dict>' 
+defaults read com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.textinput" -bool true
 
 ## Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "en" "ru"
-defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleLocale -string "en_NL"
+defaults write NSGlobalDomain AppleLanguages -array "en-NL" "ru-NL"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  HH:mm:ss"
 
 ## Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -29,6 +36,9 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Save screenshots to the desktop/screenshots
 defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
+mkdir -p "${HOME}/Desktop/Screenshots"
+
+sudo cp -v "keyboard Layouts"/* /Library/"Keyboard Layouts/"
 
 # Finder
 ## Show all filename extensions
@@ -54,6 +64,8 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
+# Always Show Hidden Files in the Finder
+defaults write com.apple.finder AppleShowAllFiles -bool YES
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -64,6 +76,10 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+#Save Menu
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -102,7 +118,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool false
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -164,6 +180,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
+killall Finder
+killall SystemUIServer
+
 # iterm2
-/usr/libexec/PlistBuddy -c 'Set :"New Bookmarks":0:"Non Ascii Font" "FantasqueSansMono-Regular 12"' ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c 'Set :"New Bookmarks":0:"Normal Font" "FantasqueSansMono-Regular 14"' ~/Library/Preferences/com.googlecode.iterm2.plist
+#/usr/libexec/PlistBuddy -c 'Set :"New Bookmarks":0:"Non Ascii Font" "FantasqueSansMono-Regular 12"' ~/Library/Preferences/com.googlecode.iterm2.plist
+#/usr/libexec/PlistBuddy -c 'Set :"New Bookmarks":0:"Normal Font" "FantasqueSansMono-Regular 14"' ~/Library/Preferences/com.googlecode.iterm2.plist

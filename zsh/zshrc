@@ -39,7 +39,7 @@ fi
 ### color scheme ###############################################################
 
 base16_scheme() {
-	local SCHEME="${DOT}/zsh/base16-shell/base16-$*.sh"
+	local SCHEME="${DOT}/zsh/base16-shell/scripts/base16-$*.sh"
     if [ -e $SCHEME ]; then
 	    source  $SCHEME
     else
@@ -47,8 +47,8 @@ base16_scheme() {
     fi
 }
 
-day() { base16_scheme "atelierdune.light" }
-night() { base16_scheme "atelierdune.dark" }
+day() { base16_scheme "atelier-seaside-light" }
+night() { base16_scheme "atelier-seaside" }
 
 night
 
@@ -70,6 +70,7 @@ fi
 unsetopt correct
 
 ### aliases ####################################################################
+
 
 alias gita="alias | grep \"git\" | grep"
 
