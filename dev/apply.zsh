@@ -8,7 +8,7 @@ CASK_APPS=(
 
 for app in ${CASK_APPS[*]}
 do
-# brew cask install --appdir="/Applications" ${app}
+brew cask install --appdir="/Applications" ${app}
 done
 
 APPS=(
@@ -17,7 +17,7 @@ APPS=(
 	git
 	mercurial
 )
-# brew install ${APPS[*]}
+brew install ${APPS[*]}
 
 GIT_USERNAME=$(git config --global user.name)
 if [ -z "${GIT_USERNAME}" ]; then
