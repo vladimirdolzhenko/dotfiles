@@ -8,8 +8,10 @@ CASK_APPS=(
 	google-chrome
 	google-backup-and-sync
 	firefox
+	telegram
 	skype
 	whatsapp
+	zoomus
 	sublime-text
 	osxfuse
 	evernote
@@ -19,7 +21,6 @@ CASK_APPS=(
 	inkscape
 	android-file-transfer
 	plex-media-server
-	telegram
 	spotify
 	rstudio
 	mactex
@@ -39,22 +40,22 @@ APPS=(
 )
 
 MAS_APPS=(
-	497799835
-	715768417
+	497799835 #Xcode
+	715768417 #Microsoft Remote Desktop
 )
-
-brew install ${APPS[*]}
-
-for app in ${MAS_APPS[*]}
-do
-mas install ${app}
-done
 
 for app in ${CASK_APPS[*]}
 do
 brew cask install --appdir="/Applications" ${app}
 done
 
+for app in ${APPS[*]}
+do
+brew install ${app}
+done
+brew install ${APPS[*]}
 
-
-
+for app in ${MAS_APPS[*]}
+do
+mas install ${app}
+done
