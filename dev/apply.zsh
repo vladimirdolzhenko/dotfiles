@@ -1,6 +1,7 @@
 require brew
 
 CASK_APPS=(
+	freetype
     java8
     java9
     java

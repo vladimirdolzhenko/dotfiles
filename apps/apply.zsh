@@ -12,6 +12,7 @@ CASK_APPS=(
 	skype
 	whatsapp
 	zoomus
+	slack
 	sublime-text
 	osxfuse
 	evernote
@@ -29,6 +30,7 @@ CASK_APPS=(
 APPS=(
 	mas
 	mc
+	wget
 	jenv
  	pwgen
 	p7zip
