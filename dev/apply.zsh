@@ -14,12 +14,15 @@ brew cask install --appdir="/Applications" ${app}
 done
 
 APPS=(
+	jenv
 	gradle
 	maven
 	git
 	mercurial
 )
 brew install ${APPS[*]}
+
+jenv enable-plugin export
 
 GIT_USERNAME=$(git config --global user.name)
 if [ -z "${GIT_USERNAME}" ]; then

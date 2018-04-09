@@ -52,8 +52,6 @@ night() { base16_scheme "atelier-seaside" }
 
 night
 
-################################################################################
-
 [[ -e $commands[vim]  ]] && export EDITOR=vim  VISUAL=vim
 [[ -e $commands[nvim] ]] && export EDITOR=nvim VISUAL=nvim
 alias vi=$VISUAL
@@ -64,10 +62,21 @@ export DEFAULT_USER="vladimir"
 
 if [[ -d ${HOME}/.jenv ]]; then 
 eval "$(jenv init -)"
-export JAVA_HOME=$(jenv javahome)
 fi
 
 unsetopt correct
+
+
+################################################################################
+
+rtjhome() {
+   export RUNTIME_JAVA_HOME=$(/usr/libexec/java_home -v $1)
+   $RUNTIME_JAVA_HOME/bin/java -version
+}
+
+rtjhome 1.8
+################################################################################
+
 
 ### aliases ####################################################################
 

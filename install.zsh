@@ -31,6 +31,7 @@ MODULES=(
     tools
     dev
     apps
+    elastic
     mc
     sublime
 )

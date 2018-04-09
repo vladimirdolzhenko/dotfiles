@@ -11,8 +11,6 @@ CASK_APPS=(
 	telegram
 	skype
 	whatsapp
-	zoomus
-	slack
 	sublime-text
 	osxfuse
 	evernote
