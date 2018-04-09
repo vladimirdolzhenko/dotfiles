@@ -18,7 +18,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -integer 15
 defaults write NSGlobalDomain KeyRepeat -integer 2
 
 # do not add period with double-space
-defaults write NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 defaults write com.apple.HIToolbox AppleEnabledInputSources -array '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>0</integer><key>KeyboardLayout Name</key><string>U.S.</string></dict>'
 defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>-23011</integer><key>KeyboardLayout Name</key><string>Russian</string></dict>' 
