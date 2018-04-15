@@ -10,6 +10,20 @@ INFO="${fg[green]}==>${reset_color}"
 WARN="${fg[yellow]}==>${reset_color}"
 ERROR="${fg[red]}==>${reset_color}"
 
+is-macos(){
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
+      return 0
+    fi
+    return 1
+}
+
+is-executable(){
+    if [ $commands[$*] ]; then
+        return 0
+    fi
+    return 1
+}
+
 require() {
     if [ ! $commands[$*] ]; then
         echo "$ERROR '$*' is not installed or not a command')"
@@ -25,12 +39,11 @@ MODULES=(
     nvim
     zsh
     bash
-    osx-privacy
-    osx-defaults
+    apps
+    dev
+    osx
     fonts
     tools
-    dev
-    apps
     elastic
     mc
     sublime
@@ -40,14 +53,16 @@ if [[ -n "$@" ]]; then
     MODULES="$@"
 fi
 
-for module in $MODULES; do
+for m in $MODULES; do
+    module=$(echo $m | sed -E "s,(.*)(/.*),\1,g")
+    module_params=$(echo $m | cut -d'/' -s -f2)
     if [[ -d "$module" ]]; then
         if [[ -f "$module/apply.zsh" ]]; then
             echo "$MSG Installing module '${fg_bold[white]}$module${reset_color}'"
             (
                 cd "$module"
                 PWD=$(pwd)
-                if source apply.zsh; then
+                if source apply.zsh "${module_params}" ; then
                     echo "$INFO Module '$module' has been installed"
                 else
                     echo "$ERROR Module '$module' failed"

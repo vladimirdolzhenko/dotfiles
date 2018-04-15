@@ -29,9 +29,9 @@ APPS=(
 	mas
 	mc
 	wget
-	jenv
  	pwgen
 	p7zip
+	dockutil
 	encfs
 	ntfs-3g
 	hexedit

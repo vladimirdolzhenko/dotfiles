@@ -1,36 +1,5 @@
 # https://github.com/myfreeweb/dotfiles/blob/master/osx/defaults.sh
 
-## Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
-
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-## Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-# Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain InitialKeyRepeat -integer 15
-defaults write NSGlobalDomain KeyRepeat -integer 2
-
-# do not add period with double-space
-defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-
-defaults write com.apple.HIToolbox AppleEnabledInputSources -array '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>0</integer><key>KeyboardLayout Name</key><string>U.S.</string></dict>'
-defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>-23011</integer><key>KeyboardLayout Name</key><string>Russian</string></dict>' 
-defaults read com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.textinput" -bool true
-
-## Set language and text formats
-defaults write NSGlobalDomain AppleLocale -string "en_NL"
-defaults write NSGlobalDomain AppleLanguages -array "en-NL" "ru-NL"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
-defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  HH:mm:ss"
-
 ## Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 ## Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -41,8 +10,6 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
 mkdir -p "${HOME}/Desktop/Screenshots"
-
-sudo cp -v "keyboard Layouts"/* /Library/"Keyboard Layouts/"
 
 # Finder
 ## Show all filename extensions
@@ -86,46 +53,9 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 ###############################################################################
-# Dock, Dashboard, and hot corners                                            #
+# Dashboard, and hot corners                                                  #
 ###############################################################################
 
-# Enable highlight hover effect for the grid view of a stack (Dock)
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
-
-# Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
-
-# Change minimize/maximize window effect
-defaults write com.apple.dock mineffect -string "scale"
-
-# Minimize windows into their application’s icon
-defaults write com.apple.dock minimize-to-application -bool true
-
-# Enable spring loading for all Dock items
-defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
-
-# Show indicator lights for open applications in the Dock
-defaults write com.apple.dock show-process-indicators -bool true
-
-# Don’t animate opening applications from the Dock
-defaults write com.apple.dock launchanim -bool false
-
-# Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0.1
-
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
-
-# Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
-# Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0
-
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool false
-
-# Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
 
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
@@ -144,20 +74,6 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 ## Disable continuous spell checking
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
-
-# Transmission
-## Use `~/Downloads/Incomplete` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
-## Don't prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-## Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-## Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
-## Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
-
 
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
@@ -184,8 +100,6 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-killall Finder
-killall SystemUIServer
 
 # iterm2
 #/usr/libexec/PlistBuddy -c 'Set :"New Bookmarks":0:"Non Ascii Font" "FantasqueSansMono-Regular 12"' ~/Library/Preferences/com.googlecode.iterm2.plist

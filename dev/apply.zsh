@@ -1,7 +1,6 @@
 require brew
 
 CASK_APPS=(
-	freetype
     java8
     java9
     java
@@ -10,7 +9,7 @@ CASK_APPS=(
 
 for app in ${CASK_APPS[*]}
 do
-brew cask install --appdir="/Applications" ${app}
+	brew cask install --appdir="/Applications" ${app}
 done
 
 APPS=(
@@ -19,18 +18,21 @@ APPS=(
 	maven
 	git
 	mercurial
+	freetype
+	asciinema
 )
 brew install ${APPS[*]}
 
 jenv enable-plugin export
 
 GIT_USERNAME=$(git config --global user.name)
+GIT_EMAIL=$(git config --global user.email)
+
 if [ -z "${GIT_USERNAME}" ]; then
 	git config --global user.name "Vladimir Dolzhenko" 
 	echo "configured git user name"
 fi
 
-GIT_EMAIL=$(git config --global user.email)
 if [ -z "${GIT_EMAIL}" ]; then
 	git config --global user.email "vladimir.dolzhenko@gmail.com"
 	echo "configured git user email"
