@@ -6,6 +6,7 @@ SUB_MODULES=(
    keyboard
    host
    dock
+   iterm2
 )
 
 if [[ -n "$@" ]]; then
