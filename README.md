@@ -26,6 +26,19 @@ cd && mkdir dotfiles && cd dotfiles && curl -L https://github.com/vladimirdolzhe
 source install.zsh
 ```
 
+## Update
+
+To update specific _module_, e.g. **dev**:
+```bash
+./install.zsh dev
+```
+
+or update specific _submodule_, e.g. **dock** of _module_ **osx**:
+
+```bash
+./install.zsh osx/dock
+```
+
 ## Thanks to…
 
 * [@akowal](https://github.com/akowal) and his initial _dotfiles_
