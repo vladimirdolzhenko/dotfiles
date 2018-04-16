@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+GIT_USERNAME="Vladimir Dolzhenko"
+GIT_EMAIL="vladimir.dolzhenko@gmail.com"
+
+COMPUTER_NAME="Vladimir’s Elastic MacBook Pro"
+HOST_NAME=$(echo $COMPUTER_NAME | sed "s, ,-,g;s,[^-a-zA-Z],,g")
+
 # https://github.com/myfreeweb/dotfiles
 
 clear

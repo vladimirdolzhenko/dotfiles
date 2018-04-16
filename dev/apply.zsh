@@ -25,15 +25,31 @@ brew install ${APPS[*]}
 
 jenv enable-plugin export
 
-GIT_USERNAME=$(git config --global user.name)
-GIT_EMAIL=$(git config --global user.email)
+git_username=$(git config --global user.name)
+git_email=$(git config --global user.email)
 
-if [ -z "${GIT_USERNAME}" ]; then
-	git config --global user.name "Vladimir Dolzhenko" 
-	echo "configured git user name"
+if [ -z "${git_username}" ]; then
+	git config --global user.name "${GIT_USERNAME}" 
+	echo "${INFO} configured git user name"
+else 
+	echo "${INFO} git user name is configured"
 fi
 
-if [ -z "${GIT_EMAIL}" ]; then
-	git config --global user.email "vladimir.dolzhenko@gmail.com"
-	echo "configured git user email"
+if [ -z "${git_email}" ]; then
+	git config --global user.email "${GIT_EMAIL}"
+	echo "${INFO} configured git user email"
+else
+	echo "${INFO} git user email is configured"
+fi
+
+if [ ! -d ~/.ssh  ]; then
+	mkdir ~/.ssh
+	echo "${INFO} created ssh folder ..."
+fi
+
+if [ ! -f ~/.ssh/id_rsa ]; then
+	echo "${INFO} generating ssh key ..."
+	ssh-keygen -t rsa -C "${EMAIL}"
+else
+	echo "${INFO} ssh key is configured"
 fi

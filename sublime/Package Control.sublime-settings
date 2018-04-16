@@ -1,19 +1,15 @@
 {
-	"bootstrapped": true,
-	"in_process_packages":
-	[
-	],
-	"installed_packages":
-	[
-		"Darkula Color Scheme",
-		"Dracula Color Scheme",
-		"Indent XML",
-		"JSON Reindent",
-		"Markdown Preview",
-		"Material Color Scheme",
-		"molokai",
-		"Package Control",
-		"Pretty JSON",
-		"Theme - Monokai Pro"
-	]
+    "bootstrapped": true,
+    "in_process_packages": [],
+    "installed_packages": [
+        "A File Icon",
+        "Indent XML",
+        "Markdown Preview",
+        "Material Monokai",
+        "Material Theme",
+        "Materialize",
+        "Package Control",
+        "Pretty JSON",
+        "Theme - Monokai Pro"
+    ]
 }

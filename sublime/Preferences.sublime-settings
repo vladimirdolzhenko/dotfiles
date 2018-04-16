@@ -12,7 +12,7 @@
 	"auto_complete_with_fields": true,
 	"auto_match_enabled": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Material Monokai/MaterialMonokaiBlue.tmTheme",
 	"create_window_at_startup": false,
 	"detect_indentation": true,
 	"detect_slow_plugins": false,
@@ -48,7 +48,7 @@
 		"tmp"
 	],
 	"font_face": "Fira Code Light",
-	"font_size": 12,
+	"font_size": 13,
 	"hot_exit": true,
 	"ignored_packages":
 	[
@@ -69,7 +69,7 @@
 	"show_panel_on_build": true,
 	"smart_indent": true,
 	"tab_size": 4,
-	"theme": "Default.sublime-theme",
+	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"trim_automatic_white_space": false,
