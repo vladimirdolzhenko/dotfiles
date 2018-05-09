@@ -1,0 +1,19 @@
+[branch]
+	autosetuprebase = always
+[pull]
+	rebase = true
+[color]
+	ui = auto
+[log]
+	decorate = full
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[core]
+	editor = nvim
+[user]
+	name = Vladimir Dolzhenko
+	email = vladimir.dolzhenko@gmail.com
+[includeIf "gitdir:~/workspace/elasticsearch/**"]
+ 	path = ~/.gitconfig.elastic

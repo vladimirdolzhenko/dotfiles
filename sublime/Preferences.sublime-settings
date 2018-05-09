@@ -18,6 +18,7 @@
 	"detect_slow_plugins": false,
 	"drag_text": false,
 	"draw_indent_guides": true,
+	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"folder_exclude_patterns":
@@ -48,7 +49,7 @@
 		"tmp"
 	],
 	"font_face": "Fira Code Light",
-	"font_size": 13,
+	"font_size": 14,
 	"hot_exit": true,
 	"ignored_packages":
 	[
@@ -75,5 +76,10 @@
 	"trim_automatic_white_space": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_separators": "./\\()\"'-:,.;<>~!#%&^*|+=[]{}`~?",
-	"word_wrap": true
+	"word_wrap": true,
+	"rulers":
+	[
+		80,
+		120
+	]
 }

@@ -1,7 +1,6 @@
 require brew
 
 CASK_APPS=(
-	gpgtools
 	iterm2
 	avast-security
 	vlc
@@ -17,19 +16,21 @@ CASK_APPS=(
 	qbittorrent
 	stellarium
 	gimp
-	inkscape
 	android-file-transfer
 	plex-media-server
 	spotify
 	rstudio
 	mactex
+	freetype
+	xquartz
+	inkscape
 )
 
 APPS=(
 	mas
 	mc
 	wget
- 	pwgen
+	pwgen
 	p7zip
 	dockutil
 	encfs

@@ -75,13 +75,5 @@ export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
 
 ################################################################################
 
-
-### aliases ####################################################################
-
-
-alias gita="alias | grep \"git\" | grep"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
-source ${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -1,0 +1,9 @@
+[remote "vladimirdolzhenko"]
+    url = git@github.com:vladimirdolzhenko/elasticsearch.git
+    fetch = +refs/heads/*:refs/remotes/vladimirdolzhenko/*
+[remote "ci"]
+    url = git@ci-git:repositories/elasticsearch.git
+    fetch = +refs/heads/*:refs/remotes/ci/*
+[user]
+    name = Vladimir Dolzhenko
+    email = vladimir.dolzhenko@elastic.co

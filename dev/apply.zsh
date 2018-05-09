@@ -13,35 +13,28 @@ do
 done
 
 APPS=(
-	jenv
-	gradle
-	maven
-	git
-	mercurial
-	freetype
-	asciinema
+    jenv
+    gradle
+    gradle-completion
+    maven
+    git
+    mercurial
+    asciinema
 )
 brew install ${APPS[*]}
 
+# Jenv
+eval "$(jenv init -)"
 jenv enable-plugin export
 
-git_username=$(git config --global user.name)
-git_email=$(git config --global user.email)
+# GIT
 
-if [ -z "${git_username}" ]; then
-	git config --global user.name "${GIT_USERNAME}" 
-	echo "${INFO} configured git user name"
-else 
-	echo "${INFO} git user name is configured"
-fi
+for CFG in gitconfig gitconfig.elastic
+do
+echo "${INFO} linking $CFG" && ln -sf $(pwd)/${CFG} "${HOME}/.${CFG}"
+done
 
-if [ -z "${git_email}" ]; then
-	git config --global user.email "${GIT_EMAIL}"
-	echo "${INFO} configured git user email"
-else
-	echo "${INFO} git user email is configured"
-fi
-
+# SSH
 if [ ! -d ~/.ssh  ]; then
 	mkdir ~/.ssh
 	echo "${INFO} created ssh folder ..."
