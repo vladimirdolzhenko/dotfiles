@@ -17,7 +17,6 @@ APPS=(
     gradle
     gradle-completion
     maven
-    git
     mercurial
     asciinema
 )
@@ -26,13 +25,6 @@ brew install ${APPS[*]}
 # Jenv
 eval "$(jenv init -)"
 jenv enable-plugin export
-
-# GIT
-
-for CFG in gitconfig gitconfig.elastic
-do
-echo "${INFO} linking $CFG" && ln -sf $(pwd)/${CFG} "${HOME}/.${CFG}"
-done
 
 # SSH
 if [ ! -d ~/.ssh  ]; then
