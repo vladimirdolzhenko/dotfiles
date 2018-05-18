@@ -2,26 +2,33 @@ require brew
 
 CASK_APPS=(
 	iterm2
+	osxfuse
+	mtmr
+
 	avast-security
-	vlc
+
 	google-chrome
-	google-backup-and-sync
 	firefox
+
+	google-backup-and-sync
+
 	telegram
 	skype
 	whatsapp
+
 	sublime-text
-	osxfuse
 	evernote
 	qbittorrent
 	stellarium
 	gimp
 	android-file-transfer
+
+	vlc
 	plex-media-server
 	spotify
+
 	rstudio
 	mactex
-	freetype
 	xquartz
 	inkscape
 )
@@ -35,6 +42,7 @@ APPS=(
 	dockutil
 	encfs
 	ntfs-3g
+	freetype
 	hexedit
 	youtube-dl
 	R
@@ -45,18 +53,26 @@ MAS_APPS=(
 	715768417 #Microsoft Remote Desktop
 )
 
-for app in ${CASK_APPS[*]}
-do
-brew cask install --appdir="/Applications" ${app}
-done
-
 for app in ${APPS[*]}
 do
-brew install ${app}
+#brew install ${app}
 done
-brew install ${APPS[*]}
+
+for app in ${CASK_APPS[*]}
+do
+#brew cask install --appdir="/Applications" ${app}
+done
 
 for app in ${MAS_APPS[*]}
 do
-mas install ${app}
+#mas install ${app}
 done
+
+# iterm2 integration
+zsh -c "$(curl -L https://iterm2.com/misc/install_shell_integration.sh)"
+
+# MTMR
+MTMR_CFG_DIR="${HOME}/Library/Application Support/MTMR/"
+DOTFILES_DIR=$(pwd -P)
+mkdir -p "${MTMR_CFG_DIR}"
+ln -sf "${DOTFILES_DIR}/mtmr/items.json" "${MTMR_CFG_DIR}"

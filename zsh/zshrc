@@ -76,4 +76,11 @@ export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
 ################################################################################
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+iterm2_print_user_vars() {
+  iterm2_set_user_var gitBranch $(git branch 2> /dev/null | sed 's,* ,,')
+  iterm2_set_user_var dirName $(print -P "%$(( $COLUMNS ))<...<%~%<<")
+  iterm2_set_user_var dirInfo $(print -P "%$(( $COLUMNS ))<...<%~%<<$(git branch 2>/dev/null | sed 's,* \(.*\),[\1],')")
+}
+
 test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
