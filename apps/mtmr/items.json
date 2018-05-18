@@ -36,7 +36,6 @@
         "if application \"Spotify\" is running then\rtell application \"Spotify\"\rif player state is playing then\rreturn (get artist of current track) & \" – \" & (get name of current track)\relse\rreturn \"\"\rend if\rend tell\rend if\rreturn \"\"\r"
     },
     "action": "appleScript",
-    "width": 250,
     "actionAppleScript": {
       "inline":
         "if application \"Spotify\" is running then\rtell application \"Spotify\"\rif player state is playing then\rnext track\rend if\rend tell\rend if\r"
@@ -70,7 +69,7 @@
   // { "type": "volumeDown", "width": 34, "align": "right" },
   { "type": "volume", "width": 120, "align": "right" },
   // { "type": "volumeUp", "width": 34, "align": "right" },
-  { "type": "weather", "width": 62, "icon_type": "images", "units": "metric", "align": "right" },
+  { "type": "weather", "icon_type": "images", "units": "metric", "align": "right" },
   // { "type": "inputsource", "align": "right" },
 
   // { "type": "battery", "align": "right" },
