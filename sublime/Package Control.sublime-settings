@@ -1,15 +1,18 @@
 {
-    "bootstrapped": true,
-    "in_process_packages": [],
-    "installed_packages": [
-        "A File Icon",
-        "Indent XML",
-        "Markdown Preview",
-        "Material Monokai",
-        "Material Theme",
-        "Materialize",
-        "Package Control",
-        "Pretty JSON",
-        "Theme - Monokai Pro"
-    ]
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Indent XML",
+		"MarkdownPreview",
+		"Material Monokai",
+		"Material Theme",
+		"Materialize",
+		"Package Control",
+		"Pretty JSON",
+		"Theme - Monokai Pro"
+	]
 }

@@ -65,6 +65,11 @@
 	"open_files_in_new_window": false,
 	"overlay_scroll_bars": "system",
 	"preview_on_click": true,
+	"rulers":
+	[
+		80,
+		120
+	],
 	"scroll_past_end": true,
 	"scroll_speed": 0,
 	"show_panel_on_build": true,
@@ -76,10 +81,5 @@
 	"trim_automatic_white_space": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_separators": "./\\()\"'-:,.;<>~!#%&^*|+=[]{}`~?",
-	"word_wrap": true,
-	"rulers":
-	[
-		80,
-		120
-	]
+	"word_wrap": true
 }
