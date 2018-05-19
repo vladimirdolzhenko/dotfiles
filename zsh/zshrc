@@ -77,10 +77,16 @@ export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+parse_git_dirty() {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "●"
+}
+parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+
 iterm2_print_user_vars() {
-  iterm2_set_user_var gitBranch $(git branch 2> /dev/null | sed 's,* ,,')
-  iterm2_set_user_var dirName $(print -P "%$(( $COLUMNS ))<...<%~%<<")
-  iterm2_set_user_var dirInfo $(print -P "%$(( $COLUMNS ))<...<%~%<<$(git branch 2>/dev/null | grep '\*' | sed 's,* \(.*\),[\1],')")
+  iterm2_set_user_var dirName "$(print -P "%$(( $COLUMNS ))<...<%~%<<")"
+  iterm2_set_user_var dirInfo "$(print -P "%$(( $COLUMNS ))<...<%~%<<") $(parse_git_branch)"
 }
 
 test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
