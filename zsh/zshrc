@@ -91,13 +91,21 @@ parse_git_branch() {
 }
 dirName() {
     local d="$(print -P "%$(( $COLUMNS ))<...<%~%<<")"
-    echo "${d}" | sed "s,~/site\(.*\),🚀\1,; s,~/workspace\(.*\),⚒\1,; s,~/Google Drive\(.*\),📦\1,; s,~\(.*\),🏠\1,"
+    while read directory badge || [[ -n "$directory" ]]
+    do
+        if [[ "$d" == $directory* ]]; then
+            echo "${d}" | sed "s,$directory\(.*\),$badge\1,"
+            return
+        fi
+    done < ${HOME}/.badges
+    echo "$d"
 }
 function dir_badges() {
     if [ -f "${HOME}/.badges" ]; then
+    local d="$(print -P "%$(( $COLUMNS ))<...<%~%<<")"
     while read directory badge || [[ -n "$directory" ]]
     do
-        if [[ "$PWD" == $directory* ]]; then
+        if [[ "$d" == $directory* ]]; then
             echo $badge
             break
         fi
