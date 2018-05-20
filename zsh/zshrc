@@ -16,6 +16,12 @@ if ! zgen saved; then
     #zgen prezto prompt theme 'sorin'
     zgen prezto prompt theme 'steeef'
 
+
+    zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
+    zstyle ':vcs_info:*:prompt:*' stagedstr "${staged_format}"
+
+    zgen prezto prompt theme 'steeef'
+
     # prezto and modules
     zgen prezto
     zgen prezto environment
@@ -78,15 +84,30 @@ export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "●"
+  [[ $(git status 2> /dev/null | grep -c "^\s\+modified:") != 0 ]] && echo "✱️"
 }
 parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
+dirName() {
+    local d="$(print -P "%$(( $COLUMNS ))<...<%~%<<")"
+    echo "${d}" | sed "s,~/site\(.*\),🚀\1,; s,~/workspace\(.*\),⚒\1,; s,~/Google Drive\(.*\),📦\1,; s,~\(.*\),🏠\1,"
+}
+function dir_badges() {
+    if [ -f "${HOME}/.badges" ]; then
+    while read directory badge || [[ -n "$directory" ]]
+    do
+        if [[ "$PWD" == $directory* ]]; then
+            echo $badge
+            break
+        fi
+    done < ${HOME}/.badges
+    fi
+}
 
 iterm2_print_user_vars() {
-  iterm2_set_user_var dirName "$(print -P "%$(( $COLUMNS ))<...<%~%<<")"
-  iterm2_set_user_var dirInfo "$(print -P "%$(( $COLUMNS ))<...<%~%<<") $(parse_git_branch)"
+  iterm2_set_user_var dirInfo "$(dirName) $(parse_git_branch)"
+  iterm2_set_user_var badge "$(dir_badges)"
 }
 
 test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

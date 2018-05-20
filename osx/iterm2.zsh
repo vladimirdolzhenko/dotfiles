@@ -31,10 +31,15 @@ PLIST_BUDDY_COMMANDS=(
     "Set 'New Bookmarks':0:'Silence Bell' true"
     "Set 'New Bookmarks':0:'Columns' 140"
     "Set 'New Bookmarks':0:'Rows' 40"
+    "Set 'Badge Text' '\\\\(user.badge)'"
     "Add 'Custom Color Presets':'Solarized Dark' dict"
     "Merge '$(pwd)/iterm2/Solarized Dark.itermcolors' 'Custom Color Presets':'Solarized Dark'"
     "Merge '$(pwd)/iterm2/Solarized Dark.itermcolors' 'New Bookmarks':0"
 )
+
+DOTFILES_DIR=$(pwd -P)
+# thanks to Adrian Cooney - https://medium.com/@adrian_cooney/iterm-tip-add-custom-badges-on-a-per-directory-basis-1d54dfc6b6e4
+ln -sf "${DOTFILES_DIR}/badges" "${HOME}/.badges"
 
 for command in $PLIST_BUDDY_COMMANDS
 do
