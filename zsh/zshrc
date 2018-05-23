@@ -61,6 +61,7 @@ night() { base16_scheme "atelier-seaside" }
 [[ -e $commands[vim]  ]] && export EDITOR=vim  VISUAL=vim
 [[ -e $commands[nvim] ]] && export EDITOR=nvim VISUAL=nvim
 alias vi=$VISUAL
+alias edit='open -a "Sublime Text"'
 
 export LESS='-g -i -q -R -S -w -z-4'
 export TERM=xterm-256color
@@ -89,7 +90,8 @@ parse_git_dirty() {
 parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
-dirName() {
+
+dir_name() {
     local d="$(print -P "%$(( $COLUMNS ))<...<%~%<<")"
     while read directory badge || [[ -n "$directory" ]]
     do
@@ -100,7 +102,8 @@ dirName() {
     done < ${HOME}/.badges
     echo "$d"
 }
-function dir_badges() {
+
+dir_badges() {
     if [ -f "${HOME}/.badges" ]; then
     local d="$(print -P "%$(( $COLUMNS ))<...<%~%<<")"
     while read directory badge || [[ -n "$directory" ]]
@@ -114,7 +117,7 @@ function dir_badges() {
 }
 
 iterm2_print_user_vars() {
-  iterm2_set_user_var dirInfo "$(dirName) $(parse_git_branch)"
+  iterm2_set_user_var dirInfo "$(dir_name) $(parse_git_branch)"
   iterm2_set_user_var badge "$(dir_badges)"
 }
 
