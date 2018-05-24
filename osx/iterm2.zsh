@@ -25,8 +25,8 @@ for color in \
 done
 
 PLIST_BUDDY_COMMANDS=(
-    "Set 'New Bookmarks':0:'Normal Font' 'InputMono-ExtraLight 14'"
-    "Set 'New Bookmarks':0:'Non Ascii Font' 'InputMono-ExtraLight 14'"
+    "Set 'New Bookmarks':0:'Normal Font' 'InputMono-Light 14'"
+    "Set 'New Bookmarks':0:'Non Ascii Font' 'InputMono-Light 14'"
     "Set 'New Bookmarks':0:'Use Non-ASCII Font' true"
     "Set 'New Bookmarks':0:'Silence Bell' true"
     "Set 'New Bookmarks':0:'Columns' 140"

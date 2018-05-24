@@ -1,10 +1,10 @@
 require brew
 
 CASK_APPS=(
-    java8
-    java9
-    java
-    intellij-idea-ce
+	java8
+	java9
+	java
+	intellij-idea-ce
 )
 
 for app in ${CASK_APPS[*]}
@@ -13,12 +13,12 @@ do
 done
 
 APPS=(
-    jenv
-    gradle
-    gradle-completion
-    maven
-    mercurial
-    asciinema
+	jenv
+	gradle
+	gradle-completion
+	maven
+	mercurial
+	asciinema
 )
 brew install ${APPS[*]}
 
