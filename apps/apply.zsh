@@ -55,17 +55,17 @@ MAS_APPS=(
 
 for app in ${APPS[*]}
 do
-#brew install ${app}
+brew install ${app}
 done
 
 for app in ${CASK_APPS[*]}
 do
-#brew cask install --appdir="/Applications" ${app}
+brew cask install --appdir="/Applications" ${app}
 done
 
 for app in ${MAS_APPS[*]}
 do
-#mas install ${app}
+mas install ${app}
 done
 
 # iterm2 integration
