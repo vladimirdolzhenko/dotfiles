@@ -10,3 +10,5 @@ JAVA_HOME8=$(/usr/libexec/java_home -v 1.8)
 JAVA_HOME=${JAVA_HOME8}
 
 export JAVA_HOME8 JAVA_HOME
+
+complete -C /usr/local/bin/vault vault
