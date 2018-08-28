@@ -13,4 +13,4 @@ if ! is-executable brew ; then
 	brew tap buo/cask-upgrade
 fi
 
-brew update && brew upgrade && brew cleanup && brew cu -a && brew cask cleanup
+brew update && brew upgrade && brew cleanup && brew cu -a
