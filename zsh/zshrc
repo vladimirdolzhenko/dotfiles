@@ -122,3 +122,8 @@ iterm2_print_user_vars() {
 }
 
 test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Vault
+export VAULT_ADDR=https://secrets.elastic.co:8200
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
