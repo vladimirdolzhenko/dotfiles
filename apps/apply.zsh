@@ -9,6 +9,7 @@ CASK_APPS=(
 
 	google-chrome
 	firefox
+	brave
 
 	google-backup-and-sync
 
@@ -42,8 +43,10 @@ APPS=(
 	dockutil
 	encfs
 	ntfs-3g
+	librsvg
 	freetype
 	hexedit
+	ffmpeg
 	youtube-dl
 	R
 )
