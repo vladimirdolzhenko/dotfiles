@@ -5,6 +5,7 @@ CASK_APPS=(
 	slack
 	vagrant
 	virtualbox
+    java-beta
 )
 
 for app in ${CASK_APPS[*]}
