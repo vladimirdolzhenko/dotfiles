@@ -5,6 +5,7 @@ CASK_APPS=(
 	java9
 	java
 	intellij-idea-ce
+	google-cloud-sdk
 )
 
 for app in ${CASK_APPS[*]}
