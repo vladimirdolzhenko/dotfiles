@@ -75,11 +75,13 @@ unsetopt correct
 
 ################################################################################
 
-export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
-export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
-export JAVA9_HOME=$(/usr/libexec/java_home -v 9)
-export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
-export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
+if [ -f /usr/libexec/java_home ]; then
+    export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
+    export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
+    export JAVA9_HOME=$(/usr/libexec/java_home -v 9)
+    export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
+    export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
+fi
 
 ################################################################################
 
@@ -128,3 +130,5 @@ test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT
 export VAULT_ADDR=https://secrets.elastic.co:8200
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
+
+cd ${HOME}

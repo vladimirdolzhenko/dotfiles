@@ -1,5 +1,3 @@
-require brew
-
 DOT="${HOME}/dotfiles"
 
 cloneIfNeeded() {
@@ -17,15 +15,17 @@ rm -f ~/.zshrc
 rm -f ~/.zprofile
 
 # install
-brew list zsh || brew install zsh
-
-# configure
-#[[ $SHELL == "/bin/zsh" ]] || 
-chsh -s /bin/zsh
+if command -v zsh >/dev/null; then  
+else                                 
+	require brew
+    brew list zsh || brew install zsh
+fi                                   
 
 DIR=$(dirname $0:A)
 
 ln -s ${DIR}/zshrc ~/.zshrc
 ln -s ${DIR}/zprofile ~/.zprofile
 
-
+# configure
+#[[ $SHELL == "/bin/zsh" ]] || 
+chsh -s /bin/zsh
