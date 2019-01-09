@@ -8,9 +8,17 @@ if %errorLevel% EQU 0 (
     exit /B 1
 )
 
-IF NOT EXIST %windir%\system32\wsl.exe (
-    ECHO "NO Windows-Subsystem-Linux"
+
+IF NOT EXIST "%SystemRoot%\System32\wsl.exe" (
+    ECHO "NO Windows-Subsystem-Linux - Enable It!"
     "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -Command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux"
+)
+
+IF NOT EXIST "Ubuntu.appx" (
+    echo Downloading Ubuntu 18.04 LTS ...
+    "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -Command Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+    echo Installing Ubuntu 18.04 LTS ...
+    "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -Command Add-AppxPackage "Ubuntu.appx"
 )
 
 WHERE choco
@@ -24,6 +32,7 @@ for %%a in (
 
     far
     conemu
+    babun
 
     firefox
     googlechrome

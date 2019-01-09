@@ -10,18 +10,13 @@ if %errorLevel% EQU 0 (
     exit /B 1
 )
 
-IF NOT EXIST %windir%\system32\wsl.exe (
-    ECHO "NO Windows-Subsystem-Linux - Enable It!"
-    "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -Command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux"
-)
-
 WHERE choco
 IF %ERRORLEVEL% NEQ 0 (
     ECHO "choco is missed -- install it"
     @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" & SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 )
 
-SET modules=dev fonts apps
+SET modules=apps dev fonts windows
 
 IF "%module%" NEQ "" SET modules=%module%
 

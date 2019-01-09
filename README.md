@@ -1,5 +1,6 @@
 # Vladimir’s dotfiles
 
+## MacOSX
 ### Using Git and the bootstrap script
 
 You can clone the repository wherever you want. The bootstrapper script will pull in the latest version and copy the files to your home folder.
@@ -37,6 +38,20 @@ or update specific _submodule_, e.g. **dock** of _module_ **osx**:
 
 ```bash
 ./install.zsh osx/dock
+```
+
+## Windows
+
+To run you need admin permissions.
+
+`install.bat` installs `choco` , a set of useful apps like `far`, `conemu`, development tools (git, java, gradle, maven, intellij idea), fonts (FiraCode, SourceCodeProd) and WindowsSubsystemLinux (with Ubuntu 18.04 LTS).
+
+### Git-free install
+
+```
+"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;Invoke-WebRequest -Uri http://github.com/vladimirdolzhenko/dotfiles/archive/master.zip -OutFile dotfiles.zip -UseBasicParsing; Expand-Archive dotfiles.zip -DestinationPath ."
+cd dotfiles-master
+install.bat
 ```
 
 ## Thanks to…
