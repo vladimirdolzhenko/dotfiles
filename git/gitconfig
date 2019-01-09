@@ -8,12 +8,10 @@
 	decorate = full
 [push]
 	default = simple
-[credential]
-	helper = osxkeychain
-[core]
-	editor = nvim
 [user]
 	name = Vladimir Dolzhenko
 	email = vladimir.dolzhenko@gmail.com
 [includeIf "gitdir:~/workspace/elasticsearch/**"]
  	path = ~/.gitconfig.elastic
+[core]
+	autocrlf = false
