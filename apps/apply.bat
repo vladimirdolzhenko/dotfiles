@@ -8,8 +8,7 @@ if %errorLevel% EQU 0 (
     exit /B 1
 )
 
-WHERE wls
-IF %ERRORLEVEL% NEQ 0 (
+IF NOT EXIST %windir%\system32\wsl.exe (
     ECHO "NO Windows-Subsystem-Linux"
     "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -Command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux"
 )
@@ -31,6 +30,7 @@ for %%a in (
 
     telegram
     slack
+    whatsapp
 
     vlc
     spotify
