@@ -12,7 +12,13 @@ for %%a in (
     maven
     gradle
     git
+
+    mysql.workbench
+    mysql.utilities
 ) do (
     echo installing %%a ...
     choco install %%a -y
 )
+
+choco install mysql --version 5.7.18 -y
+choco pin add -n=mysql --version 5.7.18
