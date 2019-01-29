@@ -33,6 +33,7 @@ for %%a in (
     far
     conemu
     babun
+    mremoteng
 
     firefox
     googlechrome
