@@ -35,6 +35,9 @@ for %%a in (
     babun
     mremoteng
 
+    pstools
+    procexp
+
     firefox
     googlechrome
 
