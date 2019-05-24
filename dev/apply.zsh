@@ -15,6 +15,7 @@ done
 
 APPS=(
 	jenv
+	ant
 	gradle
 	gradle-completion
 	maven

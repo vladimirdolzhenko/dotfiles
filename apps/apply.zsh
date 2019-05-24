@@ -9,7 +9,7 @@ CASK_APPS=(
 
 	google-chrome
 	firefox
-	brave
+	brave-browser
 
 	google-backup-and-sync
 
