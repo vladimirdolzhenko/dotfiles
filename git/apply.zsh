@@ -4,7 +4,7 @@ brew install git
 
 # GIT
 
-for CFG in gitconfig gitconfig.elastic
+for CFG in gitconfig gitconfig.jetbrains
 do
 echo "${INFO} linking $CFG" && ln -sf $(pwd)/${CFG} "${HOME}/.${CFG}"
 done

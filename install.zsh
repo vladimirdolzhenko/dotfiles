@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-COMPUTER_NAME="Vladimir’s Elastic MacBook Pro"
+COMPUTER_NAME="Vladimir’s JetBrains MacBook Pro"
 HOST_NAME=$(echo $COMPUTER_NAME | sed "s, ,-,g;s,[^-a-zA-Z],,g")
 
 # https://github.com/myfreeweb/dotfiles
@@ -47,7 +47,7 @@ MODULES=(
     osx
     fonts
     tools
-    elastic
+    jetbrains
     mc
     sublime
 )

@@ -1,8 +1,6 @@
 require brew
 
 CASK_APPS=(
-	java8
-	java9
 	java
 	intellij-idea-ce
 	google-cloud-sdk

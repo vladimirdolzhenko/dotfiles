@@ -11,9 +11,14 @@
 [user]
 	name = Vladimir Dolzhenko
 	email = vladimir.dolzhenko@gmail.com
-[includeIf "gitdir:~/workspace/elasticsearch/**"]
- 	path = ~/.gitconfig.elastic
+[includeIf "gitdir:~/workspace/intellij-community/**"]
+	path = ~/.gitconfig.jetbrains
+[includeIf "gitdir:~/workspace/intellij/**"]
+	path = ~/.gitconfig.jetbrains
+[includeIf "gitdir:~/workspace/kotlin/**"]
+	path = ~/.gitconfig.jetbrains
 [core]
 	autocrlf = input
+	editor = nvim
 [credential]
 	helper = osxkeychain
