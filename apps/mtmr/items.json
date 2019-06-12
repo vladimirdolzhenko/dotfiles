@@ -50,17 +50,11 @@
   { "type": "previous", "width": 44, "align": "right" },
   { "type": "play", "width": 44, "align": "right" },
   { "type": "next", "width": 44, "align": "right" },
-
   {
     "type": "appleScriptTitledButton",
+    "align": "left",
     "source": {
-      "inline":
-        "if application \"iTerm2\" is frontmost then tell application \"iTerm2\"\rtell current session of current window\rreturn (variable named \"user.dirInfo\")\rend tell\rend tell\r"
-    },
-    "action": "appleScript",
-    "actionAppleScript": {
-      "inline":
-        ""
+      "inline": "if application \"iTerm2\" is frontmost then tell application \"iTerm2\"\rtell current session of current window\rreturn (variable named \"user.dirInfo\")\rend tell\rend tell\rend if\rreturn \"\"\r"
     },
     "refreshInterval": 1
   },

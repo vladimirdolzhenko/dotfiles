@@ -73,27 +73,6 @@ fi
 
 unsetopt correct
 
-################################################################################
-
-if [ -f /usr/libexec/java_home ]; then
-    export JAVA6_HOME=$(/usr/libexec/java_home -v 1.6)
-    export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
-    export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
-    export JAVA9_HOME=$(/usr/libexec/java_home -v 9)
-    export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
-    export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
-    export JDK_18_HOME=$(/usr/libexec/java_home -v 1.8)
-    export JDK_18_x64=$(/usr/libexec/java_home -v 1.8)
-    export JDK_16_x64=$(/usr/libexec/java_home -v 1.6)
-
-    export JDK_16=$(/usr/libexec/java_home -v 1.6)
-    export JDK_17=$(/usr/libexec/java_home -v 1.7)
-    export JDK_18=$(/usr/libexec/java_home -v 1.8)
-    export JDK_9=$(/usr/libexec/java_home -v 9)
-fi
-
-################################################################################
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 set-window-title() {
@@ -141,8 +120,13 @@ dir_badges() {
 iterm2_print_user_vars() {
   iterm2_set_user_var dirInfo "$(dir_name) $(parse_git_branch)"
   iterm2_set_user_var badge "$(dir_badges)"
+  iterm2_set_user_var path "$(pwd)"
 }
 
+# autosuggestions
 test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# job profile
+test -e "${HOME}/.zshrc.custom" && source "${HOME}/.zshrc.custom"
 
 cd ${HOME}
