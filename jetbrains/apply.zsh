@@ -19,6 +19,9 @@ CASK_APPS=(
 	oracle-jdk
 	eclipse-ide
 	docker
+
+	rider
+	dotnet-sdk
 )
 
 for app in ${CASK_APPS[*]}

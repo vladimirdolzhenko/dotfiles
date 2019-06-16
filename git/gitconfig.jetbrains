@@ -1,9 +1,6 @@
 [remote "vladimirdolzhenko"]
     url = git@github.com:vladimirdolzhenko/jetbrains.git
     fetch = +refs/heads/*:refs/remotes/vladimirdolzhenko/*
-[remote "ci"]
-    url = git@ci-git:repositories/jetbrains.git
-    fetch = +refs/heads/*:refs/remotes/ci/*
 [user]
     name = Vladimir Dolzhenko
     email = vladimir.dolzhenko@jetbrains.com

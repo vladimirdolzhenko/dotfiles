@@ -54,7 +54,7 @@
     "type": "appleScriptTitledButton",
     "align": "left",
     "source": {
-      "inline": "if application \"iTerm2\" is frontmost then tell application \"iTerm2\"\rtell current session of current window\rreturn (variable named \"user.dirInfo\")\rend tell\rend tell\rend if\rreturn \"\"\r"
+       "inline": "tell application \"System Events\" to set frontApp to name of first process whose frontmost is true\r\rif (frontApp = \"iTerm2\") then\rtell application \"iTerm2\"\rtell current session of current window to return (variable named \"user.dirInfo\")\rend tell\relse if (frontApp = \"Google Chrome\") then\rtell application \"Google Chrome\" to return URL of active tab of front window\relse\rreturn \"\"\rend if\r"
     },
     "refreshInterval": 1
   },

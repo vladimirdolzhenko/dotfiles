@@ -47,6 +47,7 @@ APPS=(
 	freetype
 	hexedit
 	ffmpeg
+	libav
 	youtube-dl
 	R
 )
