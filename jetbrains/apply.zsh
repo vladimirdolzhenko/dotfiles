@@ -18,6 +18,7 @@ CASK_APPS=(
 	adoptopenjdk11
 	oracle-jdk
 	eclipse-ide
+	jprofiler
 	docker
 
 	rider

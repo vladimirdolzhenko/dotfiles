@@ -1,0 +1,4 @@
+Host macbook
+    HostName 192.168.2.11
+    User vladimir
+    IdentityFile ~/.ssh/id_rsa

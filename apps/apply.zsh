@@ -50,6 +50,8 @@ APPS=(
 	libav
 	youtube-dl
 	R
+
+	homebrew/cask-drivers/tomtom-sports-connect
 )
 
 MAS_APPS=(

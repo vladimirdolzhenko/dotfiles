@@ -18,3 +18,6 @@ fi
 
 #
 export VAULT_ADDR=https://vault.service.spb.consul:8200
+
+export ASYNC_PROFILER_HOME=${HOME}/async-profiler
+export PATH=$HOME/workspace/gradle-profiler/build/install/gradle-profiler/bin:$PATH
