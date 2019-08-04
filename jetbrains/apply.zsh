@@ -8,6 +8,9 @@ ln -sf "${DOTFILES_DIR}/zshrc.jetbrains" "${HOME}/.zshrc.custom"
 brew tap adoptopenjdk/openjdk
 
 CASK_APPS=(
+	jetbrains-toolbox
+	intellij-idea
+
 	slack
 	tunnelblick
 	java6
@@ -19,6 +22,7 @@ CASK_APPS=(
 	oracle-jdk
 	eclipse-ide
 	jprofiler
+	yourkit-java-profiler
 	docker
 
 	rider

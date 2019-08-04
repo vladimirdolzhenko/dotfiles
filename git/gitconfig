@@ -11,11 +11,9 @@
 [user]
 	name = Vladimir Dolzhenko
 	email = vladimir.dolzhenko@gmail.com
-[includeIf "gitdir:~/workspace/intellij-community/**"]
+[includeIf "gitdir:~/workspace/intellij*/**"]
 	path = ~/.gitconfig.jetbrains
-[includeIf "gitdir:~/workspace/intellij/**"]
-	path = ~/.gitconfig.jetbrains
-[includeIf "gitdir:~/workspace/kotlin/**"]
+[includeIf "gitdir:~/workspace/kotlin*/**"]
 	path = ~/.gitconfig.jetbrains
 [core]
 	autocrlf = input

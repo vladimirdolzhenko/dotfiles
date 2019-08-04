@@ -6,6 +6,7 @@ CASK_APPS=(
 	mtmr
 
 	avast-security
+	protonvpn
 
 	google-chrome
 	firefox
@@ -27,6 +28,7 @@ CASK_APPS=(
 	vlc
 	plex-media-server
 	spotify
+	kap
 
 	rstudio
 	mactex
@@ -40,6 +42,7 @@ APPS=(
 	wget
 	pwgen
 	p7zip
+	rmtrash
 	dockutil
 	encfs
 	ntfs-3g
