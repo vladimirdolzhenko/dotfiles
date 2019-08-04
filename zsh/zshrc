@@ -63,6 +63,30 @@ night() { base16_scheme "atelier-seaside" }
 alias vi=$VISUAL
 alias edit='open -a "Sublime Text"'
 
+# Git aliases
+
+alias gf="git fetch --prune"
+alias gfa="git fetch --all --prune"
+alias gs="git status --short"
+alias gl="git log --oneline"
+alias gp="git push"
+alias gpf="git push --force"
+alias gc="git commit"
+alias ga="git add"
+alias gr="git rebase"
+alias gd="git diff"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
+alias gch="git cherry-pick"
+alias gst="git stash"
+alias gstp="git stash pop"
+alias gg="git grep"
+alias gwip="git add .; and git commit -m wip"
+
+#
+
 export LESS='-g -i -q -R -S -w -z-4'
 export TERM=xterm-256color
 export DEFAULT_USER="vladimir"
@@ -129,4 +153,4 @@ test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT
 # job profile
 test -e "${HOME}/.zshrc.custom" && source "${HOME}/.zshrc.custom"
 
-cd ${HOME}
+# cd ${HOME}
