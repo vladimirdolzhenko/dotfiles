@@ -6,6 +6,7 @@ DOTFILES_DIR=$(pwd -P)
 ln -sf "${DOTFILES_DIR}/zshrc.jetbrains" "${HOME}/.zshrc.custom"
 
 brew tap adoptopenjdk/openjdk
+brew tap jetbrains/utils
 
 CASK_APPS=(
 	jetbrains-toolbox
