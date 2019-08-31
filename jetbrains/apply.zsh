@@ -10,10 +10,13 @@ brew tap jetbrains/utils
 
 CASK_APPS=(
 	jetbrains-toolbox
-	intellij-idea
+
+	#rider
+	#intellij-idea
 
 	slack
 	tunnelblick
+
 	java6
 	caskroom/versions/zulu7
 	#caskroom/versions/zulu8
@@ -21,12 +24,13 @@ CASK_APPS=(
 	adoptopenjdk10
 	adoptopenjdk11
 	oracle-jdk
+	jetbrains/utils/jb-openjdk11
+
 	eclipse-ide
 	jprofiler
 	yourkit-java-profiler
 	docker
 
-	rider
 	dotnet-sdk
 )
 
@@ -39,5 +43,6 @@ brew untap adoptopenjdk/openjdk
 
 APPS=(
 	vault
+	jetbrains/utils/bunches
 )
 brew install ${APPS[*]}
