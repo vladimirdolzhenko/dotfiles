@@ -154,3 +154,5 @@ test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT
 test -e "${HOME}/.zshrc.custom" && source "${HOME}/.zshrc.custom"
 
 # cd ${HOME}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

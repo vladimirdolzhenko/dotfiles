@@ -4,6 +4,7 @@ CASK_APPS=(
 	iterm2
 	osxfuse
 	mtmr
+	fzf
 
 	avast-security
 	protonvpn
