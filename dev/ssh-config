@@ -2,3 +2,11 @@ Host macbook
     HostName 192.168.2.11
     User vladimir
     IdentityFile ~/.ssh/id_rsa
+Host unit879
+    HostName kotlin-linux-perf-unit879
+    User user
+    IdentityFile ~/.ssh/kotlin-agents-3.pem
+Host unit890
+    HostName kotlin-linux-perf-unit890
+    User user
+    IdentityFile ~/.ssh/kotlin-agents-3.pem
