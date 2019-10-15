@@ -12,7 +12,7 @@
     }
   },
   // { "type": "brightnessUp", "width": 44, "align": "left" },
-  {
+  /*{
     "type": "appleScriptTitledButton",
     "source": {
       "inline":
@@ -28,7 +28,7 @@
       "base64":
         "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"
     }
-  },
+  },*/
   {
     "type": "appleScriptTitledButton",
     "source": {
@@ -54,7 +54,8 @@
     "type": "appleScriptTitledButton",
     "align": "left",
     "source": {
-       "inline": "tell application \"System Events\" to set frontApp to name of first process whose frontmost is true\r\rif (frontApp = \"iTerm2\") then\rtell application \"iTerm2\"\rtell current session of current window to return (variable named \"user.dirInfo\")\rend tell\relse if (frontApp = \"Google Chrome\") then\rtell application \"Google Chrome\" to return URL of active tab of front window\relse\rreturn \"\"\rend if\r"
+      // else if (frontApp = \"Google Chrome\") then\rtell application \"Google Chrome\" to return \"🕸️ \" & URL of active tab of front window\relse\r
+       "inline": "tell application \"System Events\" to set frontApp to name of first process whose frontmost is true\r\rif (frontApp = \"iTerm2\") then\rtell application \"iTerm2\"\rtell current session of current window to return \"💻 \" & (variable named \"user.dirInfo\")\rend tell\relse\rreturn frontApp\rend if\r"
     },
     "refreshInterval": 1
   },
@@ -63,12 +64,12 @@
   // { "type": "volumeDown", "width": 34, "align": "right" },
   { "type": "volume", "width": 120, "align": "right" },
   // { "type": "volumeUp", "width": 34, "align": "right" },
-  { "type": "weather", "icon_type": "images", "units": "metric", "align": "right" },
+  { "type": "weather", "icon_type": "images", "units": "metric", "align": "right", "api_key":"" },
   // { "type": "inputsource", "align": "right" },
 
   // { "type": "battery", "align": "right" },
   // { "type": "timeButton", "align": "right" },
-  { "type": "sleep", "width": 40, "align": "right",
+  { "type": "sleep", "width": 30, "align": "right",
   "image": {
       "base64":
         "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAApVBMVEX///8qHgVoQRt3RSBZPRafXzGETiQzJwmXVi3HdEK1azpQNBK+cD5CKw6fXzHHdELujFi1azrigEutYzb+nGnUfEaXVi3/rXn/pHG+cD72lGB3RSBZPRb/pFZQNBLmhE9oQRvSnBuETiSvWwD/wJvivDPBfAX/tHn/vJJCKw7/tIFMMB0qHgVuUi3//9b/yKf2fHwzJwn/////2Lv/3MeqhGGNUih4YqaaAAAADnRSTlMA07+7w6u3z6+bo8efy6jAuBsAAAMOSURBVHhe3ZfXjuM4EEVHyWHsZVbOcg6de+b/P23rmsbsAE56aO1DH8CGTVFHriJZBf/4lsxm7gnPG/3B8zAym/UTVM2JPO/+kOcYqR4LxmPX9QvczFgYcl4TnKep1l3XNIXvuuPxfcEbTbstIPXb+P7zm65jTOswVKqupeRcn2BERxRFNRuP7z3/saB6uyfouiiyCs6jKE0Zk7I7gxDeiKMzlMBx/tk1DSZCwM5UFWO0gBVedDNwnOsK57jrIwC3BVVVFBAUhdY5wVieVxVekB+PCGG3G05QEXaxoMBWthIQEVZUVUMKigKLCIWU9rPdTFJaDRTDCpDANOVcEvwv7Pc0RWjDCrpO67pWBCTpGcgwVtdaN83/IUgSY+o6DG3qpAzDujYmSSDouqEFnBvz+bnfGwOJIOhmYr///DSG8+EE06mXQ5AT2EZZxjl09j3LsLFwDYLcm04vBTzvL8j5dcHhwFhKaB1F/x0kKFHqtMY1xg6HYQQBTXx6QsRt+/z8/r5ate1iIYjFom1Xq/f35+e2RThPTyQOvl7gUfuMIs4RBG5o2/WaMSwhY+u1HUEAKPfU+ryvF0wiCF5fhQjDNIVGKSHKcrMRQik7EoZCvL5CEE2+XhCwpkHMWZYkWaZUWW63xkBgzHZblkrZK3WNRnNtFQK3v8ANSHCBSyFIiUgR+8tLlgmx2Xx8CJFlLy9laYOTkkJwMX8IAcoJykeSxLEQ2NK/CGxhIeI4SVBiUFJuCdxRP8HIheAaow5NRAikLwzRWCICbSYMkUohtOa8G2HuMAK3UUprY+K4JpA0SSCp+B7HxmitVOMOJ/ALLJMQtpzG8XKZEctlHNvSKgSWufBvC/z5Y8Hcvy3AkbKHCC1+8Rdo9PZQ4RgNKfALlAx1AqGUBGK3Iyg3hX9f4Af3BQEycBcvT1McaltEfhO2uOAgpylK2SOBN78tmHtW0PM3EIZQ6uL5vX7DpQDP74dfoMAjiUsCSUQxR/77CvzJpWCC/PfGOaKxyjNosPZvRn+B43lB8PNMEHieA8H35F+Wcdm7560W+QAAAABJRU5ErkJggg=="
