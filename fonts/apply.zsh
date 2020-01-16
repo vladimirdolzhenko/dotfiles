@@ -2,6 +2,7 @@ require brew
 
 brew tap caskroom/fonts
 FONTS=(
+	font-jetbrains-mono
 	font-inconsolata
 	font-input
 	font-source-code-pro
