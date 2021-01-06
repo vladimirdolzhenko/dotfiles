@@ -60,8 +60,9 @@ APPS=(
 )
 
 MAS_APPS=(
-	497799835 #Xcode
-	715768417 #Microsoft Remote Desktop
+	497799835	#Xcode
+	715768417	#Microsoft Remote Desktop
+	1474276998	#HP Smart
 )
 
 for app in ${APPS[*]}

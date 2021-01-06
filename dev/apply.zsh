@@ -4,6 +4,8 @@ CASK_APPS=(
 	java
 	intellij-idea-ce
 	google-cloud-sdk
+	android-sdk
+	ngrok
 )
 
 for app in ${CASK_APPS[*]}
@@ -19,6 +21,7 @@ APPS=(
 	maven
 	mercurial
 	asciinema
+	telnet
 )
 brew install ${APPS[*]}
 

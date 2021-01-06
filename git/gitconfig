@@ -17,6 +17,8 @@
 	path = ~/.gitconfig.jetbrains
 [includeIf "gitdir:/**/jetbrains/**"]
 	path = ~/.gitconfig.jetbrains
+[includeIf "gitdir:~/workspace/jb/**"]
+	path = ~/.gitconfig.jetbrains
 [core]
 	autocrlf = input
 	editor = nvim

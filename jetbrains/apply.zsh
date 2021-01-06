@@ -5,8 +5,10 @@ export COMPUTER_NAME="Vladimir’s JetBrains MacBook Pro"
 DOTFILES_DIR=$(pwd -P)
 ln -sf "${DOTFILES_DIR}/zshrc.jetbrains" "${HOME}/.zshrc.custom"
 
-brew tap adoptopenjdk/openjdk
-brew tap jetbrains/utils
+for tap in adoptopenjdk/openjdk jetbrains/utils isen-ng/dotnet-sdk-versions elastic/tap
+do
+	brew tap $tap
+done
 
 CASK_APPS=(
 	jetbrains-toolbox
@@ -18,8 +20,11 @@ CASK_APPS=(
 	tunnelblick
 
 	java6
-	caskroom/versions/zulu7
-	#caskroom/versions/zulu8
+	homebrew/cask-versions/zulu7
+	#homebrew/cask-versions/zulu8
+	homebrew/cask-versions/corretto8
+	corretto
+	corretto11
 	adoptopenjdk9
 	adoptopenjdk10
 	adoptopenjdk11
@@ -31,7 +36,11 @@ CASK_APPS=(
 	yourkit-java-profiler
 	docker
 
+	elastic/tap/elasticsearch-full
+	elastic/tap/kibana-full
+
 	dotnet-sdk
+	dotnet-sdk2-2-400
 )
 
 for app in ${CASK_APPS[*]}
