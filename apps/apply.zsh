@@ -5,7 +5,7 @@ CASK_APPS=(
 	osxfuse
 	mtmr
 
-	avast-security
+	#avast-security
 	protonvpn
 
 	google-chrome
@@ -26,14 +26,14 @@ CASK_APPS=(
 	android-file-transfer
 
 	vlc
-	plex-media-server
+	#plex-media-server
 	spotify
 	kap
 
-	rstudio
-	mactex
-	xquartz
-	inkscape
+	#rstudio
+	#mactex
+	#xquartz
+	#inkscape
 )
 
 APPS=(
@@ -52,11 +52,11 @@ APPS=(
 	freetype
 	hexedit
 	ffmpeg
-	libav
+	#libav
 	youtube-dl
-	R
+	#R
 
-	homebrew/cask-drivers/tomtom-sports-connect
+	#homebrew/cask-drivers/tomtom-sports-connect
 )
 
 MAS_APPS=(

@@ -9,18 +9,18 @@ source "${DOT}/zsh/zgen/zgen.zsh"
 if ! zgen saved; then
     echo ">> Generating zgen configuration"
     # prezto options
-    zgen prezto editor key-bindings 'emacs'
-    zgen prezto editor dot-expansion 'yes'
+    #zgen prezto editor key-bindings 'emacs'
+    #zgen prezto editor dot-expansion 'yes'
     zgen prezto '*' color 'yes'
     zgen prezto '*' case-sensitive 'yes'
     #zgen prezto prompt theme 'sorin'
+    #zgen prezto prompt theme 'steeef'
+
+    #zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
+    #zstyle ':vcs_info:*:prompt:*' stagedstr "${staged_format}"
+
     zgen prezto prompt theme 'steeef'
-
-
-    zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
-    zstyle ':vcs_info:*:prompt:*' stagedstr "${staged_format}"
-
-    zgen prezto prompt theme 'steeef'
+    #zgen prezto prompt theme 'sorin'
 
     # prezto and modules
     zgen prezto
@@ -29,13 +29,17 @@ if ! zgen saved; then
     zgen prezto editor
     zgen prezto git
     zgen prezto history
+    zgen prezto history-substring-search
     zgen prezto directory
-    zgen prezto spectrum
-    zgen prezto utility
+    #zgen prezto spectrum
+    #zgen prezto utility
     zgen prezto completion
 
     zgen prezto syntax-highlighting
     zgen prezto prompt
+
+    # Set the SSH identities to load into the agent.
+    zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
     # plugins
     zgen save
@@ -142,9 +146,9 @@ dir_badges() {
 }
 
 iterm2_print_user_vars() {
-  iterm2_set_user_var dirInfo "$(dir_name) $(parse_git_branch)"
-  iterm2_set_user_var badge "$(dir_badges)"
-  iterm2_set_user_var path "$(pwd)"
+  #iterm2_set_user_var dirInfo "$(dir_name) $(parse_git_branch)"
+  #iterm2_set_user_var badge "$(dir_badges)"
+  #iterm2_set_user_var path "$(pwd)"
 }
 
 # autosuggestions

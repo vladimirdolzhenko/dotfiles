@@ -21,13 +21,9 @@ CASK_APPS=(
 
 	java6
 	homebrew/cask-versions/zulu7
-	#homebrew/cask-versions/zulu8
 	homebrew/cask-versions/corretto8
 	corretto
 	corretto11
-	adoptopenjdk9
-	adoptopenjdk10
-	adoptopenjdk11
 	oracle-jdk
 	jetbrains/utils/jb-openjdk11
 

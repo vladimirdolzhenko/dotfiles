@@ -56,7 +56,6 @@
 	[
 		"AdvancedNewFile",
 		"Vintage",
-		"zzz A File Icon zzz"
 	],
 	"indent_subsequent_lines": true,
 	"index_files": false,
@@ -85,5 +84,5 @@
 	"trim_automatic_white_space": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_separators": "./\\()\"'-:,.;<>~!#%&^*|+=[]{}`~?",
-	"word_wrap": true
+	"word_wrap": true,
 }
