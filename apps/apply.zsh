@@ -12,7 +12,7 @@ CASK_APPS=(
 	firefox
 	brave-browser
 
-	google-backup-and-sync
+	google-drive
 
 	telegram
 	skype
