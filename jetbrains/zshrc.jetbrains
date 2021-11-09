@@ -14,11 +14,6 @@ if [ -f /usr/libexec/java_home ]; then
 	export JDK_18_x64=$(/usr/libexec/java_home -v 1.8)
 	export JDK_18_HOME=$(/usr/libexec/java_home -v 1.8)
 
-	export JAVA9_HOME=$(/usr/libexec/java_home -v 10)
-	export JDK_9=$(/usr/libexec/java_home -v 10)
-
-	export JAVA10_HOME=$(/usr/libexec/java_home -v 10)
-
 	export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
 	export JDK_11_HOME=$(/usr/libexec/java_home -v 11)
 	export JDK_11=$(/usr/libexec/java_home -v 11)
