@@ -1,6 +1,12 @@
 require brew
 
-brew install git
+brew tap microsoft/git
+
+APPS=(
+    git
+    microsoft-git
+)
+brew install ${APPS[*]}
 
 # GIT
 
@@ -16,3 +22,5 @@ git config --global log.decorate full
 git config --global push.default simple
 git config --global credential.helper osxkeychain
 git config --global core.editor nvim
+
+#scalar register
