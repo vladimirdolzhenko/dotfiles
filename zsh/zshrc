@@ -159,4 +159,6 @@ test -e "${HOME}/.zshrc.custom" && source "${HOME}/.zshrc.custom"
 
 # cd ${HOME}
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

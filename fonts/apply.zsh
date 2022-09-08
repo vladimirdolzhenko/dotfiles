@@ -1,6 +1,6 @@
 require brew
 
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 FONTS=(
 	font-jetbrains-mono
 	font-inconsolata
@@ -16,5 +16,5 @@ FONTS=(
 
 for app in ${FONTS[*]}
 do
-brew cask install ${app}
+brew install --cask ${app}
 done

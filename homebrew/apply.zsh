@@ -6,7 +6,8 @@ fi
 if ! is-executable brew ; then
 	echo "$INFO Installing Homebrew..."
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew install caskroom/cask/brew-cask
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${HOME}/.zprofile
+	brew tap homebrew/cask
 	brew tap caskroom/versions
 	brew tap homebrew/fuse
 	brew tap homebrew/science

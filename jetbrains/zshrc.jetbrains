@@ -1,10 +1,10 @@
 
 if [ -f /usr/libexec/java_home ]; then
-	export JAVA6_HOME=$(/usr/libexec/java_home -v 1.6)
-	export JDK6=$(/usr/libexec/java_home -v 1.6)
-	export JDK_6=$(/usr/libexec/java_home -v 1.6)
-	export JDK_16=$(/usr/libexec/java_home -v 1.6)
-	export JDK_16_x64=$(/usr/libexec/java_home -v 1.6)
+	export JAVA6_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+	export JDK6=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+	export JDK_6=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+	export JDK_16=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+	export JDK_16_x64=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 
 	export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
 	export JDK_17=$(/usr/libexec/java_home -v 1.7)
@@ -18,6 +18,7 @@ if [ -f /usr/libexec/java_home ]; then
 	export JDK_11_HOME=$(/usr/libexec/java_home -v 11)
 	export JDK_11=$(/usr/libexec/java_home -v 11)
 
+	export JDK_9=$(/usr/libexec/java_home -v 1.8)
 fi
 
 #

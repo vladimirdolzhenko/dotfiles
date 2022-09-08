@@ -2,15 +2,16 @@ require brew
 
 CASK_APPS=(
 	java
-	intellij-idea-ce
+	#intellij-idea-ce
 	google-cloud-sdk
 	android-sdk
 	ngrok
+	jetbrains-toolbox
 )
 
 for app in ${CASK_APPS[*]}
 do
-	brew cask install --appdir="/Applications" ${app}
+	brew install --cask --appdir="/Applications" ${app}
 done
 
 APPS=(

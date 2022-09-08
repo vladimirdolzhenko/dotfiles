@@ -1,8 +1,11 @@
 require brew
 
+brew tap gromgit/fuse
+
 CASK_APPS=(
 	iterm2
-	osxfuse
+	#osxfuse
+	macfuse
 	mtmr
 
 	#avast-security
@@ -46,7 +49,7 @@ APPS=(
 	p7zip
 	rmtrash
 	dockutil
-	encfs
+	encfs-mac
 	ntfs-3g
 	librsvg
 	freetype
@@ -72,7 +75,7 @@ done
 
 for app in ${CASK_APPS[*]}
 do
-brew cask install --appdir="/Applications" ${app}
+brew install --cask --appdir="/Applications" ${app}
 done
 
 for app in ${MAS_APPS[*]}

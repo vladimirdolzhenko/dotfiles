@@ -5,6 +5,7 @@ brew tap microsoft/git
 APPS=(
     git
     microsoft-git
+    git-lfs
 )
 brew install ${APPS[*]}
 
@@ -22,5 +23,7 @@ git config --global log.decorate full
 git config --global push.default simple
 git config --global credential.helper osxkeychain
 git config --global core.editor nvim
+
+git lfs install
 
 #scalar register

@@ -30,23 +30,24 @@ CASK_APPS=(
 	eclipse-ide
 	jprofiler
 	yourkit-java-profiler
-	docker
+	#docker
 
 	elastic/tap/elasticsearch-full
 	elastic/tap/kibana-full
 
-	dotnet-sdk
-	dotnet-sdk2-2-400
+	#dotnet-sdk
+	#dotnet-sdk2-2-400
 )
 
 for app in ${CASK_APPS[*]}
 do
-brew cask install --appdir="/Applications" ${app}
+brew install --cask --appdir="/Applications" ${app}
 done
 
 brew untap adoptopenjdk/openjdk
 
 APPS=(
+	npm
 	vault
 	jetbrains/utils/bunches
 )
