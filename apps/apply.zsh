@@ -59,7 +59,8 @@ APPS=(
 	youtube-dl
 	#R
 
-	#homebrew/cask-drivers/tomtom-sports-connect
+	garmin-express
+	coreutils
 )
 
 MAS_APPS=(

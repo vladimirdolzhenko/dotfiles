@@ -13,11 +13,12 @@ done
 CASK_APPS=(
 	jetbrains-toolbox
 
+	1password
+
 	#rider
 	#intellij-idea
 
 	slack
-	tunnelblick
 
 	java6
 	homebrew/cask-versions/zulu7

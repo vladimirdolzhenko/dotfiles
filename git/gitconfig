@@ -22,14 +22,14 @@
 [core]
 	autocrlf = input
 	editor = nvim
+	fsmonitor = true
+	untrackedcache = true
 [credential]
 	helper = osxkeychain
-[scalar]
-	repo = /Users/Vladimir.Dolzhenko/workspace/jb/intellij
-[maintenance]
-	repo = /Users/Vladimir.Dolzhenko/workspace/jb/intellij
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
