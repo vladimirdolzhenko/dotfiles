@@ -29,6 +29,7 @@ IF %ERRORLEVEL% NEQ 0 (
 
 for %%a in (
     7zip
+    curl
 
     far
     conemu

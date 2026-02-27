@@ -21,9 +21,11 @@ if [ -f /usr/libexec/java_home ]; then
 	export JDK_9=$(/usr/libexec/java_home -v 1.8)
 fi
 
-#
-export VAULT_ADDR=https://vault.service.spb.consul:8200
-
 export ASYNC_PROFILER_HOME=${HOME}/async-profiler
 export PATH=$HOME/workspace/gradle-profiler/build/install/gradle-profiler/bin:$PATH
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'homebrew-github-api-token' -w)
+export USER_JWT_TOKEN=$(security find-generic-password -s 'user-jwt-token' -w)
+export ANTHROPIC_BASE_URL=https://litellm.labs.jb.gg
+export ANTHROPIC_AUTH_TOKEN=$(security find-generic-password -s 'antropic-auth-token' -w)
+export YOUTRACK_TOKEN=$(security find-generic-password -s 'youtrack-token' -w)

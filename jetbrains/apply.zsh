@@ -11,8 +11,6 @@ do
 done
 
 CASK_APPS=(
-	jetbrains-toolbox
-
 	1password
 
 	#rider
@@ -20,21 +18,21 @@ CASK_APPS=(
 
 	slack
 
-	java6
 	homebrew/cask-versions/zulu7
 	homebrew/cask-versions/corretto8
+	homebrew/cask-versions/corretto11
 	corretto
-	corretto11
 	oracle-jdk
-	jetbrains/utils/jb-openjdk11
+
+	cloudflare-warp
 
 	eclipse-ide
-	jprofiler
+	#jprofiler
 	yourkit-java-profiler
 	#docker
 
-	elastic/tap/elasticsearch-full
-	elastic/tap/kibana-full
+	#elastic/tap/elasticsearch-full
+	#elastic/tap/kibana-full
 
 	#dotnet-sdk
 	#dotnet-sdk2-2-400
@@ -50,6 +48,5 @@ brew untap adoptopenjdk/openjdk
 APPS=(
 	npm
 	vault
-	jetbrains/utils/bunches
 )
 brew install ${APPS[*]}

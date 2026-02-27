@@ -7,7 +7,7 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 
 for %%a in (
-    intellijidea-ultimate
+    jetbrainstoolbox
     maven
     gradle
     git

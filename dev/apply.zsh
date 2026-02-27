@@ -1,8 +1,12 @@
 require brew
 
+for tap in oven-sh/bun
+do
+	brew tap $tap
+done
+
 CASK_APPS=(
 	java
-	#intellij-idea-ce
 	google-cloud-sdk
 	android-sdk
 	ngrok
@@ -23,6 +27,14 @@ APPS=(
 	mercurial
 	asciinema
 	telnet
+
+	docker-desktop
+
+	visual-studio-code
+	cursor
+
+	oven-sh/bun/bun
+	claude-code
 )
 brew install ${APPS[*]}
 

@@ -4,7 +4,6 @@ brew tap gromgit/fuse
 
 CASK_APPS=(
 	iterm2
-	#osxfuse
 	macfuse
 	mtmr
 
