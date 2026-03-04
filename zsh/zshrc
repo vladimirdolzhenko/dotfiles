@@ -1,7 +1,16 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Many thanks to:
 # https://github.com/myfreeweb/dotfiles
 
 DOT="${HOME}/dotfiles"
+
+source ${DOT}/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 ### plugins ####################################################################
 
@@ -19,8 +28,9 @@ if ! zgen saved; then
     #zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
     #zstyle ':vcs_info:*:prompt:*' stagedstr "${staged_format}"
 
-    zgen prezto prompt theme 'steeef'
+    #zgen prezto prompt theme 'steeef'
     #zgen prezto prompt theme 'sorin'
+    zgen prezto prompt theme "powerlevel10k"
 
     # prezto and modules
     zgen prezto
@@ -64,8 +74,13 @@ night() { base16_scheme "atelier-seaside" }
 
 [[ -e $commands[vim]  ]] && export EDITOR=vim  VISUAL=vim
 [[ -e $commands[nvim] ]] && export EDITOR=nvim VISUAL=nvim
+
+
 alias vi=$VISUAL
 alias edit='open -a "Sublime Text"'
+
+export LSCOLORS=GxFxCxDxBxegedabagaced
+alias ls="ls -G"
 
 # Git aliases
 
@@ -109,10 +124,10 @@ set-window-title() {
   echo -ne "$window_title"
 }
 
-function git_prompt_info() {
-    ref=$(git-branch-name -q -h 12 -b 64) || return
-    echo "${ZSH_THEME_GIT_PROMPT_PREFIX}${ref}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
-}
+#function git_prompt_info() {
+#    ref=$(git-branch-name -q -h 12 -b 64) || return
+#    echo "${ZSH_THEME_GIT_PROMPT_PREFIX}${ref}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
+#}
 
 PR_TITLEBAR=''
 set-window-title
@@ -162,8 +177,6 @@ test -e "${DOT}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" && source ${DOT
 # job profile
 test -e "${HOME}/.zshrc.custom" && source "${HOME}/.zshrc.custom"
 
-# cd ${HOME}
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -173,3 +186,6 @@ if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/home
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

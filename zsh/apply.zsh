@@ -9,6 +9,7 @@ cloneIfNeeded() {
 cloneIfNeeded zgen https://github.com/tarjoilija/zgen.git
 cloneIfNeeded base16-shell https://github.com/chriskempson/base16-shell.git
 cloneIfNeeded zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions.git
+cloneIfNeeded powerlevel10k https://github.com/romkatv/powerlevel10k.git
 
 # clean
 rm -f ~/.zshrc
@@ -25,6 +26,7 @@ DIR=$(dirname $0:A)
 
 ln -s ${DIR}/zshrc ~/.zshrc
 ln -s ${DIR}/zprofile ~/.zprofile
+ln -s ${DIR}/p10k.zsh ~/.p10k.zsh
 
 # configure
 #[[ $SHELL == "/bin/zsh" ]] || 
