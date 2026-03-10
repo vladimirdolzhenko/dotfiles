@@ -29,3 +29,4 @@ export USER_JWT_TOKEN=$(security find-generic-password -s 'user-jwt-token' -w)
 export ANTHROPIC_BASE_URL=https://litellm.labs.jb.gg
 export ANTHROPIC_AUTH_TOKEN=$(security find-generic-password -s 'antropic-auth-token' -w)
 export YOUTRACK_TOKEN=$(security find-generic-password -s 'youtrack-token' -w)
+export SPACE_TOKEN=$(security find-generic-password -s 'space-token' -w)
