@@ -11,6 +11,7 @@ CASK_APPS=(
 	android-sdk
 	ngrok
 	jetbrains-toolbox
+	codex-app
 )
 
 for app in ${CASK_APPS[*]}
@@ -35,6 +36,7 @@ APPS=(
 
 	oven-sh/bun/bun
 	claude-code
+	codex
 )
 brew install ${APPS[*]}
 
