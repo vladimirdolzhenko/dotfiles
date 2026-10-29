@@ -3,7 +3,8 @@ require brew
 brew tap gromgit/fuse
 
 CASK_APPS=(
-	iterm2
+	#iterm2
+	ghostty
 	macfuse
 	mtmr
 
@@ -17,7 +18,7 @@ CASK_APPS=(
 	google-drive
 
 	telegram
-	skype
+	#skype
 	whatsapp
 
 	sublime-text
@@ -30,7 +31,7 @@ CASK_APPS=(
 	vlc
 	#plex-media-server
 	spotify
-	kap
+	#kap
 
 	#rstudio
 	#mactex
